@@ -17,7 +17,7 @@ curl::Easy::Easy() {
   curlHandle = curl_easy_init();
   if ( curlHandle ) {
     curl_easy_setopt(curlHandle, CURLOPT_VERBOSE, 1L); // TODO: remove this
-    curl_easy_setopt(curlHandle, CURLOPT_DNS_SERVERS, "8.8.8.8");
+//    curl_easy_setopt(curlHandle, CURLOPT_DNS_SERVERS, "8.8.8.8");
     curl_easy_setopt(curlHandle, CURLOPT_SSL_VERIFYPEER, 0L);
     curl_easy_setopt(curlHandle, CURLOPT_SSL_VERIFYHOST, 0L);
     curl_easy_setopt(curlHandle, CURLOPT_USERAGENT, "libcurl-agent/1.0");
@@ -51,7 +51,7 @@ curl::Easy::request(const std::string &url) {
 std::ostream&
 curl::Easy::request(std::ostream& stream, const std::string& url) {
   if ( curlHandle ) {
-    curl_easy_setopt(curlHandle, CURLOPT_URL, url.c_str());
+    curl_easy_setopt(curlHandle, CURLOPT_URL, curl_easy_escape(curlHandle, url.c_str(), url.size()));
     curl_easy_setopt(curlHandle, CURLOPT_WRITEFUNCTION, StreamWriterCallback);
     curl_easy_setopt(curlHandle, CURLOPT_WRITEDATA, &stream);
     CURLcode res = curl_easy_perform(curlHandle);
