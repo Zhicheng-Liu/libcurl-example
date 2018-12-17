@@ -134,4 +134,4 @@ before_script:
 script:
   - cmake -DCMAKE_CXX_COMPILER=${CXX_COMPILER} -DCMAKE_C_COMPILER=${C_COMPILER} ./ -GNinja
   - ninja -v -j2
-  - strace ninja test
+  - strace -f -r -s 1024 ninja test
