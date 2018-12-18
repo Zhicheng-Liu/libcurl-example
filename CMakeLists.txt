@@ -102,6 +102,7 @@ set (MOD_CURL
 
   src/util/curl_easy.cpp
         )
+SET(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -fPIC")
 add_library(mod_curl SHARED ${MOD_CURL})
 target_link_libraries(mod_curl ${THIRD_PARTY_LIBRARIES})
 
