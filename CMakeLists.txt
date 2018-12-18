@@ -83,9 +83,11 @@ if (LINUX OR OSX)
 endif ()
 
 
+LINK_DIRECTORIES(${EXT_LIB_PATH}/curl/lib)
 # Application modules
 if (LINUX OR OSX)
   set (THIRD_PARTY_LIBRARIES
+    curl
     ${Boost_LIBRARIES}
     ${CMAKE_THREAD_LIBS_INIT}
   )
@@ -100,18 +102,14 @@ set (MOD_CURL
 
   src/util/curl_easy.cpp
         )
-add_library(mod_curl STATIC ${MOD_CURL})
+add_library(mod_curl SHARED ${MOD_CURL})
 target_link_libraries(mod_curl ${THIRD_PARTY_LIBRARIES})
 
 # Libraries to link with executables
 if (LINUX OR OSX)
   set (LIBRARIES_TO_LINK
     mod_curl
-    ${EXT_LIB_PATH}/curl/lib/libcurl.a
-    ${EXT_LIB_PATH}/openssl/lib/libssl.a
-    ${EXT_LIB_PATH}/openssl/lib/libcrypto.a
     ${Boost_LIBRARIES}
-    dl
     ${CMAKE_THREAD_LIBS_INIT}
   )
 elseif (WINDOWS)
