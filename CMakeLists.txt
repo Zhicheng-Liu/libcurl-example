@@ -83,11 +83,13 @@ if (LINUX OR OSX)
 endif ()
 
 
-LINK_DIRECTORIES(${EXT_LIB_PATH}/curl/lib)
+LINK_DIRECTORIES(${EXT_LIB_PATH}/curl/lib ${EXT_LIB_PATH}/openssl/lib)
 # Application modules
 if (LINUX OR OSX)
   set (THIRD_PARTY_LIBRARIES
     curl
+    ssl
+    crypto
     ${Boost_LIBRARIES}
     ${CMAKE_THREAD_LIBS_INIT}
   )
@@ -110,6 +112,9 @@ target_link_libraries(mod_curl ${THIRD_PARTY_LIBRARIES})
 if (LINUX OR OSX)
   set (LIBRARIES_TO_LINK
     mod_curl
+    curl
+    ssl
+    crypto
     ${Boost_LIBRARIES}
     ${CMAKE_THREAD_LIBS_INIT}
   )
