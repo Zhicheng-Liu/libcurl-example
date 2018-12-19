@@ -47,7 +47,7 @@ include_directories (${EXT_LIB_PATH}/curl/include)
 if (LINUX)
   # Static Build Extra Flags for Linux Static Build
   set (BUILD_SHARED_LIBS OFF)
-  set (CMAKE_EXE_LINKER_FLAGS "-static")
+#  set (CMAKE_EXE_LINKER_FLAGS "-static")
   set (CMAKE_FIND_LIBRARY_SUFFIXES .a)
   set (CMAKE_EXE_LINK_DYNAMIC_C_FLAGS)       # remove -Wl,-Bdynamic
   set (CMAKE_EXE_LINK_DYNAMIC_CXX_FLAGS)
