@@ -113,6 +113,7 @@ if (LINUX OR OSX)
           ${EXT_LIB_PATH}/openssl/lib/libssl.a
           ${EXT_LIB_PATH}/openssl/lib/libcrypto.a
     ${Boost_LIBRARIES}
+    dl
     ${CMAKE_THREAD_LIBS_INIT}
   )
 elseif (WINDOWS)
