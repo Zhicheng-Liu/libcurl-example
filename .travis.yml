@@ -39,6 +39,7 @@ jobs:
             - libboost-regex1.55-dev
             - libboost-log1.55-dev
             - ninja-build
+            - libnss3-dev
 
     # Clang 5.0
     - os: linux
@@ -59,6 +60,7 @@ jobs:
             - libboost-regex1.55-dev
             - libboost-log1.55-dev
             - ninja-build
+            - libnss3-dev
 
     # GCC 4.8
     - os: linux
@@ -79,6 +81,7 @@ jobs:
             - libboost-regex1.55-dev
             - libboost-log1.55-dev
             - ninja-build
+            - libnss3-dev
 
     # GCC 5
     - os: linux
@@ -99,6 +102,7 @@ jobs:
             - libboost-regex1.55-dev
             - libboost-log1.55-dev
             - ninja-build
+            - libnss3-dev
 
     # GCC 6
     - os: linux
@@ -119,6 +123,7 @@ jobs:
             - libboost-regex1.55-dev
             - libboost-log1.55-dev
             - ninja-build
+            - libnss3-dev
 
 
 before_script:
