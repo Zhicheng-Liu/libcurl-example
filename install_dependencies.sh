@@ -48,5 +48,5 @@ wget https://curl.haxx.se/download/curl-7.62.0.tar.gz -O /tmp/curl-7.62.0.tar.gz
 tar zxf /tmp/curl-7.62.0.tar.gz
 cd curl-7.62.0
 #LDFLAGS="-L$dependencies_dir_abs_path/openssl/lib" CPPFLAGS="-I$dependencies_dir_abs_path/openssl/include" LIBS="-lssl -lcrypto -ldl -lpthread" ./configure --disable-shared --enable-static --without-librtmp --without-ca-bundle --disable-ldap --without-zlib --without-libidn2 --enable-pthreads --enable-threaded-resolver --with-ssl=$dependencies_dir_abs_path/openssl --prefix=$dependencies_dir_abs_path/curl
-LDFLAGS="-L$dependencies_dir_abs_path/openssl/lib" CPPFLAGS="-I$dependencies_dir_abs_path/openssl/include" ./configure --disable-shared --enable-static --without-librtmp --without-ca-bundle --disable-ldap --without-zlib --without-libidn2 --enable-pthreads --enable-threaded-resolver --with-ssl=$dependencies_dir_abs_path/openssl --prefix=$dependencies_dir_abs_path/curl
+LDFLAGS="-L$dependencies_dir_abs_path/openssl/lib" CPPFLAGS="-I$dependencies_dir_abs_path/openssl/include" ./configure --disable-shared --enable-static --without-librtmp --without-ca-bundle --disable-ldap --without-zlib --without-libidn2 --enable-pthreads --enable-threaded-resolver --enable-ares --with-ssl=$dependencies_dir_abs_path/openssl --prefix=$dependencies_dir_abs_path/curl
 make && make install && cd ..
