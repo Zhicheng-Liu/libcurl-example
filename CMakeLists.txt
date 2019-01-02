@@ -82,13 +82,12 @@ if (LINUX OR OSX)
   include_directories (${Boost_INCLUDE_DIR} )
 endif ()
 
-LINK_DIRECTORIES(${EXT_LIB_PATH}/curl/lib ${EXT_LIB_PATH}/openssl/lib)
 # Application modules
 if (LINUX OR OSX)
   set (THIRD_PARTY_LIBRARIES
-    curl
-    ssl
-    crypto
+    ${EXT_LIB_PATH}/curl/lib/libcurl.a
+    ${EXT_LIB_PATH}/openssl/lib/libssl.a
+    ${EXT_LIB_PATH}/openssl/lib/libcrypto.a
     ${Boost_LIBRARIES}
     ${CMAKE_THREAD_LIBS_INIT}
   )
@@ -109,12 +108,11 @@ target_link_libraries(mod_curl ${THIRD_PARTY_LIBRARIES})
 # Libraries to link with executables
 if (LINUX OR OSX)
   set (LIBRARIES_TO_LINK
-    mod_curl
-    curl
-    ssl
-    crypto
+          mod_curl
+          ${EXT_LIB_PATH}/curl/lib/libcurl.a
+          ${EXT_LIB_PATH}/openssl/lib/libssl.a
+          ${EXT_LIB_PATH}/openssl/lib/libcrypto.a
     ${Boost_LIBRARIES}
-    dl
     ${CMAKE_THREAD_LIBS_INIT}
   )
 elseif (WINDOWS)
