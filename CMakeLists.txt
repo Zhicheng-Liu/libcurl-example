@@ -86,6 +86,7 @@ endif ()
 if (LINUX OR OSX)
   set (THIRD_PARTY_LIBRARIES
     ${EXT_LIB_PATH}/curl/lib/libcurl.a
+          ${EXT_LIB_PATH}/c-ares/lib/libcares.a
     ${EXT_LIB_PATH}/openssl/lib/libssl.a
     ${EXT_LIB_PATH}/openssl/lib/libcrypto.a
     ${Boost_LIBRARIES}
@@ -110,6 +111,7 @@ if (LINUX OR OSX)
   set (LIBRARIES_TO_LINK
           mod_curl
           ${EXT_LIB_PATH}/curl/lib/libcurl.a
+          ${EXT_LIB_PATH}/c-ares/lib/libcares.a
           ${EXT_LIB_PATH}/openssl/lib/libssl.a
           ${EXT_LIB_PATH}/openssl/lib/libcrypto.a
     ${Boost_LIBRARIES}
