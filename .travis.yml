@@ -146,5 +146,7 @@ script:
   - ninja -v -j2
   - nm -C bin/test_suite | grep -i "nss"
   - strace -f -r -s 1024 ninja test
+  - getent hosts www.ebi.ac.uk
+  - systemd-resolve --status
 
 #  - strace -f -r -s 1024 ninja test
