@@ -1,4 +1,4 @@
-sudo: false
+sudo: required
 
 language: cpp
 
@@ -139,6 +139,7 @@ jobs:
 before_script:
   - |
     if [[ $TRAVIS_OS_NAME == "linux" ]]; then
+      sudo apt-get install build-essential libnss3-dev
       ./install_dependencies.sh
     fi
   - |
