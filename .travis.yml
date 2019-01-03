@@ -31,7 +31,6 @@ jobs:
             - ubuntu-toolchain-r-test
             - llvm-toolchain-trusty-4.0
           packages:
-            - build-essential
             - clang-4.0
             - libboost1.55-dev
             - libboost-filesystem1.55-dev
@@ -40,8 +39,6 @@ jobs:
             - libboost-regex1.55-dev
             - libboost-log1.55-dev
             - ninja-build
-            - libnss3-dev
-            - libc-ares-dev
 
     # Clang 5.0
     - os: linux
@@ -54,7 +51,6 @@ jobs:
             - ubuntu-toolchain-r-test
             - llvm-toolchain-trusty-5.0
           packages:
-            - build-essential
             - clang-5.0
             - libboost1.55-dev
             - libboost-filesystem1.55-dev
@@ -63,8 +59,6 @@ jobs:
             - libboost-regex1.55-dev
             - libboost-log1.55-dev
             - ninja-build
-            - libnss3-dev
-            - libc-ares-dev
 
     # GCC 4.8
     - os: linux
@@ -76,7 +70,6 @@ jobs:
             - boost-latest
             - ubuntu-toolchain-r-test
           packages:
-            - build-essential
             - gcc-4.8
             - g++-4.8
             - libboost1.55-dev
@@ -86,8 +79,6 @@ jobs:
             - libboost-regex1.55-dev
             - libboost-log1.55-dev
             - ninja-build
-            - libnss3-dev
-            - libc-ares-dev
 
     # GCC 5
     - os: linux
@@ -99,7 +90,6 @@ jobs:
             - boost-latest
             - ubuntu-toolchain-r-test
           packages:
-            - build-essential
             - gcc-5
             - g++-5
             - libboost1.55-dev
@@ -109,8 +99,6 @@ jobs:
             - libboost-regex1.55-dev
             - libboost-log1.55-dev
             - ninja-build
-            - libnss3-dev
-            - libc-ares-dev
 
     # GCC 6
     - os: linux
@@ -122,7 +110,6 @@ jobs:
             - boost-latest
             - ubuntu-toolchain-r-test
           packages:
-            - build-essential
             - gcc-6
             - g++-6
             - libboost1.55-dev
@@ -132,14 +119,11 @@ jobs:
             - libboost-regex1.55-dev
             - libboost-log1.55-dev
             - ninja-build
-            - libnss3-dev
-            - libc-ares-dev
 
 
 before_script:
   - |
     if [[ $TRAVIS_OS_NAME == "linux" ]]; then
-      sudo apt-get install build-essential libnss3-dev
       ./install_dependencies.sh
     fi
   - |
