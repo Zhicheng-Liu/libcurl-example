@@ -135,9 +135,10 @@ script:
   - cmake -DCMAKE_CXX_COMPILER=${CXX_COMPILER} -DCMAKE_C_COMPILER=${C_COMPILER} ./ -GNinja
   - ninja -v -j2
   - nm -C bin/test_suite | grep -i "nss"
-  - strace -f -r -s 1024 ninja test
-  - strace -f -r -s 1024 getent hosts www.ebi.ac.uk
-  - systemd-resolve --status
-  - cat /etc/resolv.conf
+  - CTEST_OUTPUT_ON_FAILURE=1 ninja test
+#  - strace -f -r -s 1024 ninja test
+#  - strace -f -r -s 1024 getent hosts www.ebi.ac.uk
+#  - systemd-resolve --status
+#  - cat /etc/resolv.conf
 
 #  - strace -f -r -s 1024 ninja test
