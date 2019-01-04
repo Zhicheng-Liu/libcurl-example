@@ -32,6 +32,7 @@ jobs:
             - llvm-toolchain-trusty-4.0
           packages:
             - clang-4.0
+            - clang++-4.0
             - libboost1.55-dev
             - libboost-filesystem1.55-dev
             - libboost-iostreams1.55-dev
@@ -52,6 +53,7 @@ jobs:
             - llvm-toolchain-trusty-5.0
           packages:
             - clang-5.0
+            - clang++-5.0
             - libboost1.55-dev
             - libboost-filesystem1.55-dev
             - libboost-iostreams1.55-dev
