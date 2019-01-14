@@ -5,8 +5,6 @@
 #include <sstream>
 #include <string>
 
-#include <boost/filesystem.hpp>
-
 #include "catch/catch.hpp"
 #include "util/curl_easy.hpp"
 
@@ -21,9 +19,6 @@ TEST_CASE()
     std::ifstream data{"test/data/AB325691.fa"};
     std::stringstream sd;
     while(sd << data.rdbuf());
-    std::cout << "*********************" << std::endl;
-    std::cout << ss.str() << std::endl;
-    std::cout << "*********************" << std::endl;
     CHECK(ss.str() == sd.str());
   }
 }
