@@ -81,6 +81,7 @@ if (LINUX OR OSX)
   find_package (Boost COMPONENTS filesystem iostreams program_options regex log thread system REQUIRED )
   include_directories (${Boost_INCLUDE_DIR} )
 elseif (WINDOWS)
+  add_definitions(-DCURL_STATICLIB)
   set (CMAKE_C_FLAGS " -DCURL_STATICLIB") # Needed to statically link libcurl
 endif ()
 
