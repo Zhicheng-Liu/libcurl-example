@@ -101,7 +101,7 @@ if (LINUX OR OSX)
   )
 elseif (WINDOWS)
   set (THIRD_PARTY_LIBRARIES
-    windows_dependencies/curl-7.62.0/winbuild/lib/libcurl
+    windows_dependencies/curl/lib/libcurl
     ${CMAKE_THREAD_LIBS_INIT}
   )
 endif ()
@@ -129,7 +129,7 @@ if (LINUX OR OSX)
 elseif (WINDOWS)
   set (LIBRARIES_TO_LINK
     mod_curl
-    windows_dependencies/curl-7.62.0/winbuild/lib/libcurl
+    windows_dependencies/curl/lib/libcurl
     ${CMAKE_THREAD_LIBS_INIT}
   )
 endif ()
