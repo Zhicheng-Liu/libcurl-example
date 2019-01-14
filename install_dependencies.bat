@@ -18,6 +18,8 @@ xcopy /e/i curl-7.62.0\include\* curl\include
 cd curl-7.62.0/winbuild
 set RTLIBCFG=static
 nmake /f Makefile.vc mode=static VC=15 DEBUG=no
+dir lib
+dir bin
 cd ../../
 
 :: Delete useless files
