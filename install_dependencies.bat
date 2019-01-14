@@ -11,8 +11,8 @@ powershell -command "(new-object System.Net.WebClient).DownloadFile('https://cur
 powershell -command "Expand-Archive curl-7.62.0.zip ."
 
 :: Copy headers
-mkdir -p curl\include
-xcopy /e/i curl-7.62.0-win32-mingw\include curl\include
+md curl\include
+xcopy /e/i curl-7.62.0-win32-mingw\include\* curl\include
 
 :: Rename libcurl static library
 ren curl-7.62.0-win32-mingw\lib\libcurl.a libcurl.lib
