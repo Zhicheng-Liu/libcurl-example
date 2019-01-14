@@ -30,7 +30,6 @@ elseif (OSX AND EXISTS "${PROJECT_SOURCE_DIR}/osx_dependencies")
   set (ODB_PATH "${EXT_LIB_PATH}/odb-2.4.0-i686-macosx/bin/" CACHE STRING "Path to odb binaries")
 elseif (WINDOWS AND EXISTS "${PROJECT_SOURCE_DIR}/windows_dependencies")
   include_directories (windows_dependencies)
-  set (EXT_LIB_PATH "${PROJECT_SOURCE_DIR}/lib/windows_specific" CACHE STRING "Absolute path to libraries")
 else ()
   set (EXT_LIB_PATH "/usr/local/bin" CACHE STRING "Absolute path to libraries")
   if (OSX)
@@ -80,6 +79,8 @@ if (LINUX OR OSX)
   set (CMAKE_C_FLAGS " -DSQLITE_ENABLE_UNLOCK_NOTIFY -DSQLITE_OMIT_LOAD_EXTENSION") # Needed to statically link ODB
   find_package (Boost COMPONENTS filesystem iostreams program_options regex log thread system REQUIRED )
   include_directories (${Boost_INCLUDE_DIR} )
+elseif (WINDOWS)
+  set (CMAKE_C_FLAGS " -DCURL_STATICLIB") # Needed to statically link libcurl
 endif ()
 
 # Application modules
@@ -94,6 +95,7 @@ if (LINUX OR OSX)
   )
 elseif (WINDOWS)
   set (THIRD_PARTY_LIBRARIES
+    windows_dependencies/curl-7.62.0-win32-mingw/lib/libcurl
     ${CMAKE_THREAD_LIBS_INIT}
   )
 endif ()
@@ -121,6 +123,7 @@ if (LINUX OR OSX)
 elseif (WINDOWS)
   set (LIBRARIES_TO_LINK
     mod_curl
+    windows_dependencies/curl-7.62.0-win32-mingw/lib/libcurl
     ${CMAKE_THREAD_LIBS_INIT}
   )
 endif ()
