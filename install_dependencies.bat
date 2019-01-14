@@ -21,7 +21,7 @@ cd ../../
 md curl\include
 xcopy /e/i curl-7.62.0\include\* curl\include
 md curl\lib
-xcopy curl-7.62.0\builds\libcurl-vc15-x64-release-static-ipv6-sspi-winssl-obj-lib\libcurl_a.lib curl\lib\libcurl.lib
+xcopy curl-7.62.0\builds\libcurl-vc15-x86-release-static-ipv6-sspi-winssl-obj-lib\libcurl_a.lib curl\lib\libcurl.lib
 
 dir /s curl-7.62.0\builds
 dir /s curl-7.62.0\winbuild
