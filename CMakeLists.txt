@@ -136,6 +136,8 @@ elseif (WINDOWS)
     windows_dependencies/curl/lib/libcurl
     ws2_32
     crypt32
+    Wldap32
+    Normaliz
     ${CMAKE_THREAD_LIBS_INIT}
   )
 endif ()
