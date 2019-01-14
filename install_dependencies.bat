@@ -11,10 +11,10 @@ powershell -command "(new-object System.Net.WebClient).DownloadFile('https://cur
 powershell -command "Expand-Archive curl-7.62.0.zip ."
 
 :: Build libcurl
-md curl\lib
-cd curl-7.62.0/winbuild
-set RTLIBCFG=static
-nmake /f Makefile.vc mode=static VC=15 DEBUG=no
+cd curl-7.62.0
+call buildconf.bat
+cd winbuild
+RTLIBCFG=static nmake /f Makefile.vc mode=static VC=15 DEBUG=no
 cd ../../
 
 :: Copy headers and libs
