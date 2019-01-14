@@ -24,8 +24,6 @@ md curl\lib
 xcopy curl-7.62.0\builds\libcurl-vc14-x86-release-static-ipv6-sspi-winssl-obj-lib\libcurl_a.lib curl\lib
 ren curl\lib\libcurl_a.lib libcurl.lib
 
-dumpbin /ARCHIVEMEMBERS curl\lib\libcurl.lib
-
 :: Delete useless files
 del curl-7.62.0.zip
 
