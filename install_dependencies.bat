@@ -22,7 +22,10 @@ md curl\include
 xcopy /e/i curl-7.62.0\include\* curl\include
 md curl\lib
 xcopy /e/i curl-7.62.0\builds\libcurl-vc15-x64-release-static-ipv6-sspi-winssl\lib\* curl\lib
-dir curl\lib
+
+dir /s curl-7.62.0\builds
+dir /s curl-7.62.0\winbuild
+dir /s curl
 
 :: Delete useless files
 del curl-7.62.0.zip
