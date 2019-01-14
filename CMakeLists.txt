@@ -102,7 +102,7 @@ elseif (WINDOWS)
     windows_dependencies/brotli-1.0.7-win32-mingw/lib/libbrotlidec-static
     windows_dependencies/brotli-1.0.7-win32-mingw/lib/libbrotlicommon-static
     windows_dependencies/libhsts-0.1.0-win32-mingw/lib/libhsts
-    windows_dependencies/libssh2-1.8.0-win32-mingw/liblibssh2
+    windows_dependencies/libssh2-1.8.0-win32-mingw/lib/libssh2
     windows_dependencies/nghttp2-1.34.0-win32-mingw/lib/libnghttp2
     windows_dependencies/openssl-1.1.1-win32-mingw/lib/libssl
     windows_dependencies/openssl-1.1.1-win32-mingw/lib/libcrypto
@@ -139,7 +139,7 @@ elseif (WINDOWS)
     windows_dependencies/brotli-1.0.7-win32-mingw/lib/libbrotlidec-static
     windows_dependencies/brotli-1.0.7-win32-mingw/lib/libbrotlicommon-static
     windows_dependencies/libhsts-0.1.0-win32-mingw/lib/libhsts
-    windows_dependencies/libssh2-1.8.0-win32-mingw/liblibssh2
+    windows_dependencies/libssh2-1.8.0-win32-mingw/lib/libssh2
     windows_dependencies/nghttp2-1.34.0-win32-mingw/lib/libnghttp2
     windows_dependencies/openssl-1.1.1-win32-mingw/lib/libssl
     windows_dependencies/openssl-1.1.1-win32-mingw/lib/libcrypto
