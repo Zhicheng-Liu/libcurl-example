@@ -62,6 +62,10 @@ elseif (OSX)
   set (Boost_USE_STATIC_LIBS ON)             # only find static libs
 elseif (WINDOWS)
   set (Boost_USE_STATIC_LIBS ON)             # only find static libs
+  set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /MT")
+  set (CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} /MT")
+  set (CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} /MTd")
+  set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MT")
   set (CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /MT") # also requires boost with runtime-link=static
   set (CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MTd") # also requires boost with runtime-link=static
 endif ()
@@ -81,8 +85,8 @@ if (LINUX OR OSX)
   find_package (Boost COMPONENTS filesystem iostreams program_options regex log thread system REQUIRED )
   include_directories (${Boost_INCLUDE_DIR} )
 elseif (WINDOWS)
-  add_definitions(-DCURL_STATICLIB)
-  set (CMAKE_C_FLAGS " -DCURL_STATICLIB") # Needed to statically link libcurl
+  add_definitions(-DCURL_STATICLIB) # Needed to statically link libcurl
+  set (CMAKE_C_FLAGS " -DCURL_STATICLIB")
 endif ()
 
 # Application modules
