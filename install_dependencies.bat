@@ -12,9 +12,9 @@ powershell -command "Expand-Archive curl-7.62.0.zip ."
 
 :: Build libcurl
 cd curl-7.62.0
-call buildconf.bat
 cd winbuild
-RTLIBCFG=static nmake /f Makefile.vc mode=static VC=15 DEBUG=no
+set RTLIBCFG=static
+nmake /f Makefile.vc mode=static VC=15 DEBUG=no RTLIBCFG=static
 cd ../../
 
 :: Copy headers and libs
