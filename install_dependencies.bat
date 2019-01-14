@@ -10,17 +10,19 @@ powershell -command "(new-object System.Net.WebClient).DownloadFile('https://cur
 :: Unzip zip files
 powershell -command "Expand-Archive curl-7.62.0.zip ."
 
-:: Copy headers
-md curl\include
-xcopy /e/i curl-7.62.0\include\* curl\include
-
 :: Build libcurl
+md curl\lib
 cd curl-7.62.0/winbuild
 set RTLIBCFG=static
 nmake /f Makefile.vc mode=static VC=15 DEBUG=no
-dir lib
-dir bin
 cd ../../
+
+:: Copy headers and libs
+md curl\include
+xcopy /e/i curl-7.62.0\include\* curl\include
+md curl\lib
+xcopy /e/i curl-7.62.0\builds\libcurl-vc15-x64-release-static-ipv6-sspi-winssl\lib\* curl\lib
+dir curl\lib
 
 :: Delete useless files
 del curl-7.62.0.zip
