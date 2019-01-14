@@ -98,6 +98,15 @@ if (LINUX OR OSX)
 elseif (WINDOWS)
   set (THIRD_PARTY_LIBRARIES
     windows_dependencies/curl-7.62.0-win32-mingw/lib/libcurl
+    windows_dependencies/brotli-1.0.7-win32-mingw/lib/libbrotlienc-static
+    windows_dependencies/brotli-1.0.7-win32-mingw/lib/libbrotlidec-static
+    windows_dependencies/brotli-1.0.7-win32-mingw/lib/libbrotlicommon-static
+    windows_dependencies/libhsts-0.1.0-win32-mingw/lib/libhsts
+    windows_dependencies/libssh2-1.8.0-win32-mingw/liblibssh2
+    windows_dependencies/nghttp2-1.34.0-win32-mingw/lib/libnghttp2
+    windows_dependencies/openssl-1.1.1-win32-mingw/lib/libssl
+    windows_dependencies/openssl-1.1.1-win32-mingw/lib/libcrypto
+    windows_dependencies/zlib-1.2.11-win32-mingw/libz
     ${CMAKE_THREAD_LIBS_INIT}
   )
 endif ()
@@ -126,6 +135,15 @@ elseif (WINDOWS)
   set (LIBRARIES_TO_LINK
     mod_curl
     windows_dependencies/curl-7.62.0-win32-mingw/lib/libcurl
+    windows_dependencies/brotli-1.0.7-win32-mingw/lib/libbrotlienc-static
+    windows_dependencies/brotli-1.0.7-win32-mingw/lib/libbrotlidec-static
+    windows_dependencies/brotli-1.0.7-win32-mingw/lib/libbrotlicommon-static
+    windows_dependencies/libhsts-0.1.0-win32-mingw/lib/libhsts
+    windows_dependencies/libssh2-1.8.0-win32-mingw/liblibssh2
+    windows_dependencies/nghttp2-1.34.0-win32-mingw/lib/libnghttp2
+    windows_dependencies/openssl-1.1.1-win32-mingw/lib/libssl
+    windows_dependencies/openssl-1.1.1-win32-mingw/lib/libcrypto
+    windows_dependencies/zlib-1.2.11-win32-mingw/libz
     ${CMAKE_THREAD_LIBS_INIT}
   )
 endif ()
