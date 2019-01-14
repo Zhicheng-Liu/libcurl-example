@@ -9,7 +9,7 @@ install:
 
 build_script:
   - cmd: cmake -DCMAKE_BUILD_TYPE=Release -G "NMake Makefiles" .
-  - cmd: nmake mode=static VC=15 DEBUG=no RTLIBCFG=static
+  - cmd: nmake mode=static VC=14 DEBUG=no RTLIBCFG=static
 
 test_script:
   - cmd: bin\test_suite.exe

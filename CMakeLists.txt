@@ -87,6 +87,7 @@ if (LINUX OR OSX)
 elseif (WINDOWS)
   add_definitions(-DCURL_STATICLIB) # Needed to statically link libcurl
   set (CMAKE_C_FLAGS " -DCURL_STATICLIB")
+  set (RTLIBCFG "static")
 endif ()
 
 # Application modules
@@ -127,6 +128,9 @@ if (LINUX OR OSX)
     ${CMAKE_THREAD_LIBS_INIT}
   )
 elseif (WINDOWS)
+  add_definitions(-DCURL_STATICLIB) # Needed to statically link libcurl
+  set (CMAKE_C_FLAGS " -DCURL_STATICLIB")
+  set (RTLIBCFG "static")
   set (LIBRARIES_TO_LINK
     mod_curl
     windows_dependencies/curl/lib/libcurl
