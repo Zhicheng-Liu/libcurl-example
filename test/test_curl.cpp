@@ -2,6 +2,7 @@
 // Created by Zhicheng Liu on 2018-12-17.
 //
 #include <fstream>
+#include <limits>
 #include <sstream>
 #include <string>
 
@@ -12,6 +13,7 @@ TEST_CASE()
 {
   SECTION("test download")
   {
+    std::cout << std::numeric_limits<std::streamsize>::max() << std::endl;
     std::string url = "https://www.ebi.ac.uk/ena/data/view/AB325691&display=fasta";
     curl::Easy curl;
     std::stringstream ss;
