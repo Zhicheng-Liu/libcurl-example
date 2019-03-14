@@ -1,8 +1,6 @@
 #include <memory>
 
-#include <boost/algorithm/string/predicate.hpp>
 #include <boost/filesystem/operations.hpp>
-#include <boost/iostreams/copy.hpp>
 
 #include "util/file_utils.hpp"
 #include "util/stream_utils.hpp"
