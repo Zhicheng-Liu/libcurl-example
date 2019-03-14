@@ -103,8 +103,14 @@ elseif (WINDOWS)
 endif ()
 
 set (MOD_CURL
+  inc/fasta/fasta.hpp
   inc/util/curl_easy.hpp
+  inc/util/file_utils.hpp
+  inc/util/stream_utils.hpp
+  inc/util/string_constants.hpp
+  inc/util/string_utils.hpp
 
+  src/fasta/fasta.cpp
   src/util/curl_easy.cpp
         )
 add_library(mod_curl STATIC ${MOD_CURL})
@@ -138,6 +144,7 @@ endif ()
 # Build tests
 set (ALL_TESTS
   test/test_curl.cpp
+  test/test_fasta.cpp
 )
 
 add_executable (test_suite test/main_test.cpp ${ALL_TESTS})
