@@ -20,6 +20,7 @@ public:
 
   ~ContigFromENA()
   {
+      fasta_file.close();
       boost::filesystem::remove(contig_name);
   }
 
