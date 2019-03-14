@@ -1,0 +1,15 @@
+os:
+  - Visual Studio 2017
+
+init:
+  - cmd: call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars32.bat"
+
+install:
+  - cmd: install_dependencies.bat
+
+build_script:
+  - cmd: cmake -DCMAKE_BUILD_TYPE=Release -G "NMake Makefiles" .
+  - cmd: nmake
+
+test_script:
+  - cmd: bin\test_suite.exe
